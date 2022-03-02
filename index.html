@@ -29,7 +29,7 @@
       rel="stylesheet"
     />
     <link
-      href="./resources/fontawesome-free-6.0.0-web/css/all.min.css"
+      href="./src/img/fontawesome-free-6.0.0-web/css/all.min.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./dist/style/style.css" />
@@ -37,9 +37,109 @@
     <title>What2Eat</title>
   </head>
   <body>
-    <header>
-      <h1>What2Eat</h1>
-    </header>
+    <div class="container">
+      <header class="header">
+        <h1 class="title">
+          <span class="title__logo"
+            ><img src="./src/img/icon.png" alt="app logo"
+          /></span>
+          What2Eat
+        </h1>
+        <form class="search">
+          <input
+            type="text"
+            class="search__field"
+            placeholder="Search over 1,000,000 recipes..."
+          />
+          <button class="btn search__btn">
+            <span class="search__icon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+            <span>Search</span>
+          </button>
+        </form>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <button class="btn btn--nav">
+                <span><i class="fa-solid fa-pen-to-square"></i></span>
+                <span>Add recipe</span>
+              </button>
+            </li>
+            <li class="nav__item">
+              <button class="btn btn--nav">
+                <span><i class="fa-solid fa-bookmark"></i></span>
+                <span>Bookmarks</span>
+              </button>
+              <div class="bookmarks">
+                <ul class="bookmarks__list">
+                  <div class="message">
+                    <p>
+                      No bookmarks yet. Find a nice recipe and bookmark it :)
+                    </p>
+                  </div>
+                </ul>
+              </div>
+            </li>
+            <li class="nav__item">
+              <button class="btn btn--nav">
+                <span><i class="fa-solid fa-shopping-basket"></i></span>
+                <span>Shopping List</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <main>
+          <div class="results">
+            <div class="message">
+              <p>Start by searching for a recipe or an ingredient. Have fun!</p>
+            </div>
+            <ul class="results__list">
+              <!-- <li class="results__item"></li> -->
+            </ul>
+            <div class="results__pagination"></div>
+          </div>
+          <div class="recipe">
+            <h2 class="welcome__title">Welcome</h2>
+            <p class="welcome__text">
+              If you’re looking for recipes, you came to the right place
+            </p>
+            <h3 class="welcome_subtitle">Here you can</h3>
+            <ul class="welcome__features">
+              <li class="features__item">
+                <span class="features__icon"
+                  ><i class="fa-solid fa-magnifying-glass"></i
+                ></span>
+                <p class="features__text">
+                  Search for a recipe or an ingredient
+                </p>
+              </li>
+              <li class="features__item">
+                <span class="features__icon"
+                  ><i class="fa-solid fa-bookmark"></i
+                ></span>
+                <p class="features__text">Bookmark your favorite recipes</p>
+              </li>
+              <li class="features__item">
+                <span class="features__icon"
+                  ><i class="fa-solid fa-pen-to-square"></i
+                ></span>
+                <p class="features__text">Add your own recipes</p>
+              </li>
+              <li class="features__item">
+                <span class="features__icon"
+                  ><i class="fa-solid fa-shopping-basket"></i
+                ></span>
+                <p class="features__text">
+                  Create a shopping list for ingredients
+                </p>
+              </li>
+            </ul>
+            <button class="btn btn--start">Start</button>
+          </div>
+        </main>
+      </header>
+    </div>
     <main></main>
     <footer></footer>
   </body>

@@ -49,7 +49,7 @@ function browserSyncReload(cb) {
 
 // Watch Task
 function watchTask() {
-  watch("./src/*.html", browserSyncReload);
+  watch("./*.html", browserSyncReload);
   watch(
     ["./src/scss/**/*.scss", "src/**/*.js"],
     series(scssTask, jsTask, browserSyncReload)
