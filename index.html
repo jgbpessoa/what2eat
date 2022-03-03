@@ -7,19 +7,19 @@
     <link
       rel="icon"
       type="image/png"
-      href="./img/favicon/favicon-16x16.png"
+      href="./src/img/favicon/favicon-16x16.png"
       sizes="16x16"
     />
     <link
       rel="icon"
       type="image/png"
-      href="./img/favicon/favicon-32x32.png"
+      href="./src/img/favicon/favicon-32x32.png"
       sizes="32x32"
     />
     <link
       rel="icon"
       type="image/png"
-      href="./img/favicon/favicon-96x96.png"
+      href="./src/img/favicon/favicon-96x96.png"
       sizes="96x96"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,23 +39,23 @@
   <body>
     <div class="container">
       <header class="header">
-        <h1 class="title">
+        <div class="title">
           <span class="title__logo"
-            ><img src="./src/img/icon.png" alt="app logo"
+            ><img src="./src/img/icon.png" alt="web app logo"
           /></span>
-          What2Eat
-        </h1>
-        <form class="search">
+          <h1 class="title__text">What2Eat</h1>
+        </div>
+        <form class="header__search">
           <input
             type="text"
             class="search__field"
-            placeholder="Search over 1,000,000 recipes..."
+            placeholder="Search for recipe/ingredient"
           />
-          <button class="btn search__btn">
+          <button class="btn btn--search">
             <span class="search__icon">
               <i class="fa-solid fa-magnifying-glass"></i>
             </span>
-            <span>Search</span>
+            <span class="search__text">Search</span>
           </button>
         </form>
         <nav class="nav">
@@ -89,22 +89,27 @@
             </li>
           </ul>
         </nav>
-        <main>
-          <div class="results">
-            <div class="message">
-              <p>Start by searching for a recipe or an ingredient. Have fun!</p>
-            </div>
-            <ul class="results__list">
-              <!-- <li class="results__item"></li> -->
-            </ul>
-            <div class="results__pagination"></div>
+      </header>
+      <main>
+        <div class="results">
+          <div class="message">
+            <p class="message__title">Start searching!</p>
+            <p class="message__text">
+              You can look for a recipe or a specific ingredient
+            </p>
           </div>
-          <div class="recipe">
-            <h2 class="welcome__title">Welcome</h2>
+          <ul class="results__list">
+            <!-- <li class="results__item"></li> -->
+          </ul>
+          <div class="results__pagination"></div>
+        </div>
+        <div class="recipe">
+          <div class="welcome">
+            <h2 class="welcome__title">Welcome!</h2>
             <p class="welcome__text">
               If you’re looking for recipes, you came to the right place
             </p>
-            <h3 class="welcome_subtitle">Here you can</h3>
+            <h3 class="welcome__subtitle">Here you can:</h3>
             <ul class="welcome__features">
               <li class="features__item">
                 <span class="features__icon"
@@ -137,10 +142,9 @@
             </ul>
             <button class="btn btn--start">Start</button>
           </div>
-        </main>
-      </header>
+        </div>
+      </main>
+      <footer></footer>
     </div>
-    <main></main>
-    <footer></footer>
   </body>
 </html>

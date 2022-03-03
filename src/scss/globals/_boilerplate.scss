@@ -1,0 +1,56 @@
+@use "colors" as *;
+@use "fonts" as *;
+@use "utilities" as *;
+
+html {
+  //Setting font-size: 100% on the <html> tag ensures that your CSS applies an initial font-size value to the whole document that is equal to the font size set by the user in the browser.
+  font-size: 100%;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  height: var(--app-height);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-width: rem(265);
+  min-height: rem(650);
+  height: 100vh;
+  height: var(--app-height);
+  font-family: $font-secondary;
+  background-color: $color-sienna;
+  color: $color-blue;
+  letter-spacing: rem(-1);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+:root {
+  --app-height: 100%;
+}

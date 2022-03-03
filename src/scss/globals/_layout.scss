@@ -1,0 +1,34 @@
+@use "colors" as *;
+@use "utilities" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  max-width: rem(340);
+  min-width: rem(265);
+  height: 90vh;
+  min-height: rem(600);
+  max-height: rem(650);
+  margin: 0 auto;
+  background-color: $color-milk;
+  border-radius: rem(45);
+  border: solid $color-secondary rem(8);
+
+  @include breakpoint(medium) {
+    max-width: rem(700);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+main {
+  @include breakpoint(medium) {
+    display: flex;
+    gap: rem(30);
+  }
+}

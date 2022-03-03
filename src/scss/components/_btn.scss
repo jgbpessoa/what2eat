@@ -1,0 +1,35 @@
+@use "utilities" as *;
+@use "globals" as *;
+
+.btn {
+  font-family: $font-primary;
+  letter-spacing: rem(-2);
+  color: $color-blue;
+  border-radius: rem(30);
+  background-color: $color-primary-light;
+  border: solid 1px $color-primary;
+  box-shadow: -3px 4px 0px rgb(231, 92, 58);
+  transition: all 100ms linear;
+  cursor: pointer;
+
+  &:hover {
+    transform: translate(-3px, 4px);
+    box-shadow: none;
+  }
+
+  &--start {
+    margin-top: rem(36);
+    font-size: rem(25);
+    padding: rem(5) rem(52);
+
+    @include breakpoint(medium) {
+      display: none;
+    }
+  }
+
+  &--search {
+    color: $color-primary;
+    padding: rem(4) rem(10);
+    margin-left: rem(6);
+  }
+}

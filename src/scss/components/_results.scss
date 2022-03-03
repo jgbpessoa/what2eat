@@ -1,0 +1,31 @@
+@use "utilities" as *;
+@use "globals" as *;
+
+.results {
+  display: none;
+  @include breakpoint(medium) {
+    display: block;
+    background-color: $color-white;
+    border-radius: rem(30);
+    border: solid 2px $color-primary;
+    min-width: rem(300);
+  }
+
+  .message {
+    text-align: center;
+
+    &__title {
+      margin-top: rem(60);
+      font-size: rem(40);
+      font-weight: 500;
+      letter-spacing: rem(-2);
+    }
+
+    &__text {
+      margin: rem(30) auto;
+      font-size: rem(25);
+      font-weight: 300;
+      width: 15ch;
+    }
+  }
+}

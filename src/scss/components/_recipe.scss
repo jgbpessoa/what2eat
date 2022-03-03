@@ -1,0 +1,9 @@
+@use "utilities" as *;
+
+.recipe {
+  margin-top: rem(36);
+
+  @include breakpoint(medium) {
+    margin-top: 0;
+  }
+}

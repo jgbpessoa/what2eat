@@ -1,0 +1,74 @@
+@use "utilities" as *;
+@use "globals" as *;
+
+.header {
+  @include breakpoint(medium) {
+    display: flex;
+    align-items: center;
+    gap: rem(30);
+  }
+
+  &__search {
+    display: none;
+
+    @include breakpoint(medium) {
+      display: inline-block;
+    }
+  }
+
+  @include breakpoint(medium) {
+    margin-bottom: rem(50);
+  }
+}
+
+.title {
+  display: flex;
+  gap: rem(5);
+  justify-content: center;
+  align-items: center;
+
+  &__logo {
+    width: rem(45);
+    height: rem(45);
+  }
+
+  &__text {
+    font-family: $font-primary;
+    font-size: rem(38);
+    letter-spacing: rem(-4);
+  }
+}
+
+.search {
+  &__field {
+    background-color: $color-white;
+    border-radius: rem(30);
+    border: solid 1px $color-primary;
+    box-shadow: -3px 4px 0px rgb(231, 92, 58);
+    padding: rem(4) rem(16);
+    font-family: $font-secondary;
+    color: $color-blue;
+    letter-spacing: rem(-1);
+    transition: all 100ms ease-in-out;
+    -webkit-appearance: none;
+
+    &:focus {
+      transform: translate(-3px, 4px);
+      box-shadow: none;
+      border: solid 1px $color-primary;
+      outline: none;
+
+      &::placeholder {
+        visibility: hidden;
+      }
+    }
+
+    &::placeholder {
+      color: $color-blue;
+    }
+  }
+
+  &__text {
+    display: none;
+  }
+}

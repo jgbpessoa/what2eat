@@ -1,0 +1,46 @@
+@use "utilities" as *;
+@use "globals" as *;
+
+.welcome {
+  text-align: center;
+
+  &__title {
+    font-size: rem(28);
+  }
+
+  &__text {
+    margin-top: rem(15);
+    font-size: rem(18);
+    width: 18ch;
+  }
+
+  &__subtitle {
+    font-size: rem(22);
+    margin-top: rem(28);
+  }
+
+  &__features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.features {
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-top: rem(16);
+    gap: rem(25);
+  }
+
+  &__icon {
+    color: $color-primary;
+    font-size: rem(22);
+  }
+
+  &__text {
+    width: 15ch;
+    text-align: left;
+  }
+}
