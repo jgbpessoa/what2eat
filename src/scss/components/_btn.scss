@@ -8,7 +8,7 @@
   border-radius: rem(30);
   background-color: $color-primary-light;
   border: solid 1px $color-primary;
-  box-shadow: -3px 4px 0px rgb(231, 92, 58);
+  box-shadow: -3px 4px 0px $color-primary;
   transition: all 100ms linear;
   cursor: pointer;
 
@@ -29,7 +29,16 @@
 
   &--search {
     color: $color-primary;
-    padding: rem(4) rem(10);
+    font-size: rem(16);
+    padding: rem(8) rem(24) rem(8) rem(22);
     margin-left: rem(6);
+  }
+
+  &--nav {
+    color: $color-primary;
+    font-size: rem(40);
+    width: rem(80);
+    height: rem(80);
+    border-radius: 100%;
   }
 }

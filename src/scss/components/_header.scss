@@ -5,19 +5,16 @@
   @include breakpoint(medium) {
     display: flex;
     align-items: center;
-    gap: rem(30);
+    gap: rem(55);
   }
 
   &__search {
     display: none;
 
     @include breakpoint(medium) {
-      display: inline-block;
+      display: flex;
+      gap: rem(10);
     }
-  }
-
-  @include breakpoint(medium) {
-    margin-bottom: rem(50);
   }
 }
 
@@ -30,12 +27,21 @@
   &__logo {
     width: rem(45);
     height: rem(45);
+
+    @include breakpoint(medium) {
+      width: rem(55);
+      height: rem(55);
+    }
   }
 
   &__text {
     font-family: $font-primary;
     font-size: rem(38);
     letter-spacing: rem(-4);
+
+    @include breakpoint(medium) {
+      font-size: rem(50);
+    }
   }
 }
 
@@ -44,9 +50,13 @@
     background-color: $color-white;
     border-radius: rem(30);
     border: solid 1px $color-primary;
-    box-shadow: -3px 4px 0px rgb(231, 92, 58);
-    padding: rem(4) rem(16);
+    width: rem(210);
+    box-shadow: -3px 4px 0px $color-primary;
+    line-height: rem(18);
+    padding: rem(12) rem(16) rem(8) rem(16);
+    // padding: rem(8) rem(16);
     font-family: $font-secondary;
+    font-size: rem(16);
     color: $color-blue;
     letter-spacing: rem(-1);
     transition: all 100ms ease-in-out;
@@ -55,8 +65,9 @@
     &:focus {
       transform: translate(-3px, 4px);
       box-shadow: none;
-      border: solid 1px $color-primary;
+      border: solid 2px $color-secondary;
       outline: none;
+      overflow: visible;
 
       &::placeholder {
         visibility: hidden;
@@ -65,6 +76,7 @@
 
     &::placeholder {
       color: $color-blue;
+      line-height: rem(18);
     }
   }
 

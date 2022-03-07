@@ -1,3 +1,28 @@
+@use "utilities" as *;
+
 .nav {
   display: none;
+
+  @include breakpoint(medium) {
+    display: block;
+    position: absolute;
+    bottom: rem(45);
+    left: 50%;
+    transform: translate(-50%);
+
+    &__list {
+      display: flex;
+      gap: rem(80);
+    }
+
+    &__title {
+      display: none;
+    }
+  }
+}
+
+.bookmarks {
+  .message {
+    display: none;
+  }
 }

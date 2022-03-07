@@ -4,19 +4,34 @@
 .welcome {
   text-align: center;
 
+  @include breakpoint(medium) {
+    margin-top: rem(70);
+  }
+
   &__title {
     font-size: rem(28);
+    @include breakpoint(medium) {
+      font-size: rem(40);
+    }
   }
 
   &__text {
     margin-top: rem(15);
     font-size: rem(18);
     width: 18ch;
+
+    @include breakpoint(medium) {
+      font-size: rem(20);
+    }
   }
 
   &__subtitle {
     font-size: rem(22);
     margin-top: rem(28);
+
+    @include breakpoint(medium) {
+      font-size: rem(25);
+    }
   }
 
   &__features {
@@ -32,15 +47,25 @@
     align-items: center;
     margin-top: rem(16);
     gap: rem(25);
+    @include breakpoint(medium) {
+      margin-top: rem(22);
+    }
   }
 
   &__icon {
     color: $color-primary;
     font-size: rem(22);
+
+    @include breakpoint(medium) {
+      font-size: rem(26);
+    }
   }
 
   &__text {
     width: 15ch;
     text-align: left;
+    @include breakpoint(medium) {
+      font-size: rem(18);
+    }
   }
 }

@@ -29,9 +29,12 @@ body {
   height: 100vh;
   height: var(--app-height);
   font-family: $font-secondary;
-  background-color: $color-sienna;
+  background: $color-sienna;
   color: $color-blue;
   letter-spacing: rem(-1);
+  @include breakpoint(medium) {
+    min-height: rem(900);
+  }
 }
 
 ul {
