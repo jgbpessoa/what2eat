@@ -2,18 +2,63 @@
 @use "globals" as *;
 
 .header {
+  max-width: rem(1000);
+
   @include breakpoint(medium) {
     display: flex;
     align-items: center;
     gap: rem(55);
   }
 
+  @include breakpoint(large) {
+    justify-content: space-between;
+    width: 100%;
+    gap: 0;
+  }
+
   &__search {
-    display: none;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: all 500ms ease-in-out;
+
+    &--mobile {
+      width: auto;
+      height: auto;
+      opacity: 1;
+    }
 
     @include breakpoint(medium) {
+      width: auto;
+      height: auto;
+      opacity: 1;
       display: flex;
       gap: rem(10);
+    }
+
+    @include breakpoint(large) {
+      gap: 0;
+      justify-items: center;
+      background-color: $color-white;
+      border-radius: rem(30);
+      border: solid 1px $color-primary;
+      width: auto;
+      max-width: rem(340);
+      box-shadow: -3px 4px 0px $color-primary;
+      line-height: rem(18);
+      overflow: hidden;
+      padding-left: rem(12);
+      font-family: $font-secondary;
+      font-size: rem(16);
+      color: $color-blue;
+      letter-spacing: rem(-1);
+      transition: all 100ms ease-in-out;
+      -webkit-appearance: none;
+
+      &:hover {
+        transform: translate(-3px, 4px);
+        box-shadow: none;
+      }
     }
   }
 }
@@ -23,6 +68,15 @@
   gap: rem(5);
   justify-content: center;
   align-items: center;
+  transition: all 500ms ease-in-out;
+
+  &--mobile {
+    transform: translateY(-10px);
+
+    @include breakpoint(medium) {
+      transform: none;
+    }
+  }
 
   &__logo {
     width: rem(45);
@@ -31,6 +85,11 @@
     @include breakpoint(medium) {
       width: rem(55);
       height: rem(55);
+    }
+
+    @include breakpoint(large) {
+      width: rem(35);
+      height: rem(35);
     }
   }
 
@@ -42,45 +101,9 @@
     @include breakpoint(medium) {
       font-size: rem(50);
     }
-  }
-}
 
-.search {
-  &__field {
-    background-color: $color-white;
-    border-radius: rem(30);
-    border: solid 1px $color-primary;
-    width: rem(210);
-    box-shadow: -3px 4px 0px $color-primary;
-    line-height: rem(18);
-    padding: rem(12) rem(16) rem(8) rem(16);
-    // padding: rem(8) rem(16);
-    font-family: $font-secondary;
-    font-size: rem(16);
-    color: $color-blue;
-    letter-spacing: rem(-1);
-    transition: all 100ms ease-in-out;
-    -webkit-appearance: none;
-
-    &:focus {
-      transform: translate(-3px, 4px);
-      box-shadow: none;
-      border: solid 2px $color-secondary;
-      outline: none;
-      overflow: visible;
-
-      &::placeholder {
-        visibility: hidden;
-      }
+    @include breakpoint(large) {
+      font-size: rem(40);
     }
-
-    &::placeholder {
-      color: $color-blue;
-      line-height: rem(18);
-    }
-  }
-
-  &__text {
-    display: none;
   }
 }

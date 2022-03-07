@@ -31,7 +31,18 @@
     color: $color-primary;
     font-size: rem(16);
     padding: rem(8) rem(24) rem(8) rem(22);
-    margin-left: rem(6);
+
+    @include breakpoint(large) {
+      box-shadow: none;
+      border-radius: rem(30);
+      border: none;
+      border-left: solid 1px $color-primary;
+
+      &:hover {
+        transform: none;
+        background-color: #faba8a;
+      }
+    }
   }
 
   &--nav {
@@ -40,5 +51,13 @@
     width: rem(80);
     height: rem(80);
     border-radius: 100%;
+
+    @include breakpoint(large) {
+      width: auto;
+      height: rem(40);
+      font-size: rem(16);
+      border-radius: rem(30);
+      padding: 0 rem(15);
+    }
   }
 }

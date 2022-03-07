@@ -33,7 +33,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./dist/style/style.css" />
-    <script defer src="./dist/script/script.js"></script>
+    <script defer src="./dist/script/controller.js"></script>
+    <script
+      defer
+      src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
+    ></script>
     <title>What2Eat</title>
   </head>
   <body>
@@ -84,7 +88,7 @@
             <li class="nav__item">
               <button class="btn btn--nav">
                 <span><i class="fa-solid fa-shopping-basket"></i></span>
-                <span class="nav__title">Shopping List</span>
+                <span class="nav__title">List</span>
               </button>
             </li>
           </ul>
@@ -94,9 +98,14 @@
         <div class="results">
           <div class="message">
             <p class="message__title">Start searching...</p>
-            <p class="message__text">
-              You can look for a recipe or a specific ingredient
-            </p>
+            <lottie-player
+              src="https://assets10.lottiefiles.com/packages/lf20_p1bmwqtk.json"
+              background="transparent"
+              speed="1"
+              style="width: 200px; height: 200px"
+              autoplay
+              class="animation"
+            ></lottie-player>
           </div>
           <ul class="results__list">
             <!-- <li class="results__item"></li> -->

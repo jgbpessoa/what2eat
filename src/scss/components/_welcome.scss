@@ -13,6 +13,10 @@
     @include breakpoint(medium) {
       font-size: rem(40);
     }
+
+    @include breakpoint(large) {
+      margin-top: rem(90);
+    }
   }
 
   &__text {

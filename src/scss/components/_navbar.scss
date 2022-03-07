@@ -19,6 +19,20 @@
       display: none;
     }
   }
+
+  @include breakpoint(large) {
+    position: static;
+    transform: none;
+
+    &__list {
+      gap: rem(10);
+    }
+
+    &__title {
+      display: inline-block;
+      margin-left: rem(5);
+    }
+  }
 }
 
 .bookmarks {

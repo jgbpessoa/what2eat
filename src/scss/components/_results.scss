@@ -3,13 +3,33 @@
 
 .results {
   display: none;
+  transition: all 500ms ease-in-out;
+  background-color: $color-white;
+  width: 92.5%;
+  border-radius: rem(30);
+  margin: rem(20) auto;
+  margin-bottom: 0;
+  height: 60vh;
+  min-height: rem(408);
+  max-height: rem(530);
+  border: solid 2px $color-primary;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
   @include breakpoint(medium) {
     display: block;
+    opacity: 1;
     background-color: $color-white;
-    margin-left: rem(20);
     border-radius: rem(30);
+    height: 100%;
+    margin: 0 auto;
+    max-height: none;
     border: solid 2px $color-primary;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+  @include breakpoint(large) {
+    margin-top: rem(10);
+    width: 90%;
+    max-height: none;
   }
 
   .message {
@@ -23,11 +43,8 @@
       letter-spacing: rem(-2);
     }
 
-    &__text {
-      margin: rem(30) auto;
-      font-size: rem(25);
-      font-weight: 300;
-      width: 15ch;
+    .animation {
+      margin: rem(-40) auto 0;
     }
   }
 }
