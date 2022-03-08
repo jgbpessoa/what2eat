@@ -1,3 +1,5 @@
+import "babel-polyfill";
+
 // Variables
 const btnStart = document.querySelector(".btn--start");
 const headerTitle = document.querySelector(".title");
@@ -13,6 +15,18 @@ btnStart.addEventListener("click", function () {
   recipe.classList.add("hidden");
 });
 
+const showRecipe = async function () {
+  try {
+    const res = await fetch(
+      "https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886"
+    );
+    console.log(res);
+  } catch {
+    alert(err);
+  }
+};
+
+showRecipe();
 // Fixing mobile browsers 100vh issue
 const appHeight = () => {
   const doc = document.documentElement;

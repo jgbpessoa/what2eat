@@ -1,12 +1,17 @@
 // Initialize modules
 const { src, dest, watch, series } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
+const browserify = require("browserify");
+const source = require("vinyl-source-stream");
+const buffer = require("vinyl-buffer");
+const sourcemaps = require("gulp-sourcemaps");
 const autoprefixer = require("gulp-autoprefixer");
 const cssnano = require("gulp-cssnano");
 const purgecss = require("gulp-purgecss");
 const babel = require("gulp-babel");
-const terser = require("gulp-terser");
+const uglify = require("gulp-uglify");
 const browsersync = require("browser-sync").create();
+const babelify = require("babelify");
 
 // Sass Task
 // sourcemaps make debug easier!
@@ -21,10 +26,23 @@ function scssTask() {
 
 // JavaScript Task
 function jsTask() {
-  return src("./src/js/controller.js", { sourcemaps: true })
-    .pipe(babel({ presets: ["@babel/preset-env"] }))
-    .pipe(terser())
-    .pipe(dest("./dist/script", { sourcemaps: "." }));
+  return browserify({
+    entries: ["./src/js/controller.js"],
+    debug: true,
+  })
+    .transform(
+      babelify.configure({
+        presets: ["@babel/preset-env"],
+        sourceMaps: true,
+      })
+    )
+    .bundle()
+    .pipe(source("controller.js"))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(uglify())
+    .pipe(sourcemaps.write("./"))
+    .pipe(dest("./dist/script/"));
 }
 
 // Browsersync

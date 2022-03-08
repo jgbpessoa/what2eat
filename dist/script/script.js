@@ -1,2 +1,0 @@
-"use strict";var appHeight=function(){document.documentElement.style.setProperty("--app-height","".concat(window.innerHeight,"px"))};window.addEventListener("resize",appHeight),appHeight();
-//# sourceMappingURL=script.js.map
