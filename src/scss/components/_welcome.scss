@@ -2,7 +2,12 @@
 @use "globals" as *;
 
 .welcome {
+  margin-top: rem(36);
   text-align: center;
+
+  @media screen and (max-width: 20em) {
+    margin-top: rem(26);
+  }
 
   @include breakpoint(medium) {
     margin-top: rem(70);
@@ -32,6 +37,10 @@
   &__subtitle {
     font-size: rem(22);
     margin-top: rem(28);
+
+    @media screen and (max-width: 20em) {
+      margin-top: rem(20);
+    }
 
     @include breakpoint(medium) {
       font-size: rem(25);

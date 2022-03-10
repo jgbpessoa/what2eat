@@ -87,7 +87,7 @@
             </li>
             <li class="nav__item">
               <button class="btn btn--nav">
-                <span><i class="fa-solid fa-shopping-basket"></i></span>
+                <span><i class="fa-solid fa-shopping-cart"></i></span>
                 <span class="nav__title">List</span>
               </button>
             </li>
@@ -112,44 +112,153 @@
           </ul>
           <div class="results__pagination"></div>
         </div>
+        <div class="welcome">
+          <h2 class="welcome__title">Welcome!</h2>
+          <p class="welcome__text">
+            If you’re looking for recipes, you came to the right place
+          </p>
+          <h3 class="welcome__subtitle">Here you can:</h3>
+          <ul class="welcome__features">
+            <li class="features__item">
+              <span class="features__icon"
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></span>
+              <p class="features__text">Search for a recipe or an ingredient</p>
+            </li>
+            <li class="features__item">
+              <span class="features__icon"
+                ><i class="fa-solid fa-bookmark"></i
+              ></span>
+              <p class="features__text">Bookmark your favorite recipes</p>
+            </li>
+            <li class="features__item">
+              <span class="features__icon"
+                ><i class="fa-solid fa-pen-to-square"></i
+              ></span>
+              <p class="features__text">Add your own recipes</p>
+            </li>
+            <li class="features__item">
+              <span class="features__icon"
+                ><i class="fa-solid fa-shopping-cart"></i
+              ></span>
+              <p class="features__text">
+                Create a shopping list for ingredients
+              </p>
+            </li>
+          </ul>
+          <button class="btn btn--start">Start</button>
+        </div>
         <div class="recipe">
-          <div class="welcome">
-            <h2 class="welcome__title">Welcome!</h2>
-            <p class="welcome__text">
-              If you’re looking for recipes, you came to the right place
-            </p>
-            <h3 class="welcome__subtitle">Here you can:</h3>
-            <ul class="welcome__features">
-              <li class="features__item">
-                <span class="features__icon"
-                  ><i class="fa-solid fa-magnifying-glass"></i
-                ></span>
-                <p class="features__text">
-                  Search for a recipe or an ingredient
-                </p>
+          <figure class="recipe__fig">
+            <img
+              src="./src/img/recipe-img.jpeg"
+              alt="Tomato"
+              class="recipe__img"
+            />
+            <button class="btn--bookmark">
+              <span class="">
+                <i class="fa-regular fa-bookmark"></i>
+              </span>
+            </button>
+            <button class="btn--back">
+              <span class="">
+                <i class="fa-solid fa-arrow-left"></i>
+              </span>
+            </button>
+            <h1 class="recipe__title">
+              <span>Pasta with tomato cream sauce and aspargus</span>
+              <span class="recipe__user-generated">
+                <i class="fa-solid fa-user"></i>
+              </span>
+            </h1>
+          </figure>
+
+          <div class="recipe__details">
+            <div class="recipe__info">
+              <span class="recipe__info-icon">
+                <i class="fa-solid fa-clock"></i>
+              </span>
+              <span class="recipe__info-data recipe__info-data--minutes"
+                >45</span
+              >
+              <span class="recipe__info-text">minutes</span>
+            </div>
+            <div class="recipe__info">
+              <span class="recipe__info-icon">
+                <i class="fa-solid fa-users"></i>
+              </span>
+              <span class="recipe__info-data recipe__info-data--people">4</span>
+              <span class="recipe__info-text">servings</span>
+
+              <div class="recipe__info-buttons">
+                <button class="btn--tiny btn--tiny-servings">
+                  <span class="btn--tiny-icon">
+                    <i class="fa-solid fa-circle-minus"></i>
+                  </span>
+                </button>
+                <button class="btn--tiny btn--tiny-servings">
+                  <span class="btn--tiny-icon">
+                    <i class="fa-solid fa-circle-plus"></i>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="recipe__ingredients">
+            <h2 class="heading--2">Recipe ingredients</h2>
+            <ul class="recipe__ingredient-list">
+              <li class="recipe__ingredient">
+                <span class="recipe__icon">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span class="recipe__quantity">1000</span>
+                <span class="recipe__description">
+                  <span class="recipe__unit">g</span>
+                  pasta
+                </span>
+                <button class="btn--tiny btn--tiny-cart">
+                  <span class="recipe__icon">
+                    <i class="fa-solid fa-cart-plus"></i>
+                  </span>
+                </button>
               </li>
-              <li class="features__item">
-                <span class="features__icon"
-                  ><i class="fa-solid fa-bookmark"></i
-                ></span>
-                <p class="features__text">Bookmark your favorite recipes</p>
-              </li>
-              <li class="features__item">
-                <span class="features__icon"
-                  ><i class="fa-solid fa-pen-to-square"></i
-                ></span>
-                <p class="features__text">Add your own recipes</p>
-              </li>
-              <li class="features__item">
-                <span class="features__icon"
-                  ><i class="fa-solid fa-shopping-basket"></i
-                ></span>
-                <p class="features__text">
-                  Create a shopping list for ingredients
-                </p>
+
+              <li class="recipe__ingredient">
+                <span class="recipe__icon">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span class="recipe__quantity">0.5</span>
+                <span class="recipe__description">
+                  <span class="recipe__unit">cup</span>
+                  ricotta cheese
+                </span>
+                <button class="btn--tiny btn--tiny-cart">
+                  <span class="recipe__icon">
+                    <i class="fa-solid fa-cart-plus"></i>
+                  </span>
+                </button>
               </li>
             </ul>
-            <button class="btn btn--start">Start</button>
+          </div>
+
+          <div class="recipe__directions">
+            <h2 class="heading--2">How to cook it</h2>
+            <p class="recipe__directions-text">
+              This recipe was carefully designed and tested by
+              <span class="recipe__publisher">The Pioneer Woman</span>. Please
+              check out directions at their website.
+            </p>
+            <a
+              class="btn--recipe"
+              href="http://thepioneerwoman.com/cooking/pasta-with-tomato-cream-sauce/"
+              target="_blank"
+            >
+              <span>Directions</span>
+              <span class="search__icon">
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </a>
           </div>
         </div>
       </main>

@@ -3,6 +3,7 @@
 
 .header {
   max-width: rem(1000);
+  margin-top: rem(16);
 
   @include breakpoint(medium) {
     display: flex;

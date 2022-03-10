@@ -2,6 +2,19 @@
 
 .nav {
   display: none;
+  position: absolute;
+  bottom: rem(20);
+  left: 50%;
+  transform: translate(-50%);
+
+  &__list {
+    display: flex;
+    gap: rem(30);
+  }
+
+  &__title {
+    display: none;
+  }
 
   @include breakpoint(medium) {
     display: block;
