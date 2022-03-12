@@ -23,8 +23,7 @@
     border: solid 2px $color-primary;
   }
   @include breakpoint(large) {
-    margin-top: rem(10);
-    width: 90%;
+    width: 80%;
     max-height: none;
   }
 

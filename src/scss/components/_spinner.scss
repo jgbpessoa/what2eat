@@ -1,0 +1,11 @@
+@use "utilities" as *;
+@use "globals" as *;
+
+.spinner {
+  font-size: rem(70);
+  color: $color-primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

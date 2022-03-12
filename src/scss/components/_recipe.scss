@@ -3,18 +3,23 @@
 
 .recipe {
   display: none;
-  margin: rem(16);
+  margin: rem(16) auto;
   margin-bottom: rem(12);
   border-radius: rem(30);
   overflow-y: scroll;
   height: 55vh;
+  min-width: rem(222);
+  max-width: rem(298);
+  width: 70vw;
   border: solid 2px $color-primary;
   // Fix visible scroll outside border-radius in safari
   transform: translateZ(0);
 
   @include breakpoint(medium) {
-    margin-top: 0;
-    border: none;
+    margin: 0 auto;
+    width: 100%;
+    max-width: none;
+    height: auto;
   }
 
   &__fig {
@@ -27,6 +32,10 @@
     overflow: hidden;
     -webkit-clip-path: content-box;
     clip-path: content-box;
+
+    @include breakpoint(medium) {
+      max-height: rem(200);
+    }
   }
 
   &__img {
@@ -86,26 +95,33 @@
     text-align: center;
     text-decoration: underline;
     font-size: rem(24);
-    margin-top: rem(20);
+  }
+
+  &__ingredients,
+  &__directions {
+    margin: rem(24) rem(18);
   }
 
   &__ingredient-list {
     font-size: rem(18);
-    width: 20ch;
-    margin: rem(16) auto;
+    margin: rem(24) auto;
+    max-width: rem(240);
   }
 
   &__ingredient {
-    margin-top: rem(8);
+    margin: rem(14) auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr 7fr 2fr;
+    // justify-items: center;
   }
 
   &__quantity {
-    margin-left: rem(4);
+    justify-self: center;
   }
 
   &__directions-text {
-    margin: rem(16) auto;
     text-align: center;
     font-size: rem(18);
+    margin: rem(16) auto;
   }
 }

@@ -41,7 +41,7 @@
 .hidden {
   display: none !important;
   @include breakpoint(medium) {
-    display: block !important;
+    // display: block !important;
   }
 }
 
@@ -67,7 +67,7 @@
   1% {
     display: block;
     opacity: 0;
-    transform: scale(0);
+    transform: scale(0.7);
   }
   100% {
     opacity: 1;
@@ -84,7 +84,7 @@
   display: block !important;
   opacity: 1;
   transform: scale(1);
-  animation: show-scale 700ms ease-in-out;
+  animation: show-scale 500ms ease-in-out;
 }
 
 .padding-mobile {
@@ -92,12 +92,14 @@
 }
 
 main {
+  overflow: hidden;
+
   @include breakpoint(medium) {
     display: grid;
     grid-template-columns: 5fr 6fr;
-    justify-content: center;
-    justify-items: center;
-    margin-bottom: rem(150);
+    max-height: calc(100% - rem(140));
+    overflow: hidden;
+    gap: rem(20);
   }
   @include breakpoint(large) {
     width: 100%;
