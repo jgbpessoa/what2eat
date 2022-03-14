@@ -2,6 +2,8 @@ import fracty from "fracty";
 
 class RecipeView {
   #parentElement = document.querySelector(".recipe");
+  #errorMessage = "We could not find that recipe. Please try another one!";
+  #successMessage = "";
   #data;
 
   render(data) {
@@ -11,7 +13,7 @@ class RecipeView {
     this.#parentElement.insertAdjacentHTML("afterbegin", markup);
   }
 
-  renderSpinner = function () {
+  renderSpinner() {
     const markup = `
       <div class="spinner">
         <i class="fa-solid fa-spinner fa-spin"></i>
@@ -19,7 +21,39 @@ class RecipeView {
     `;
     this.#clear();
     this.#parentElement.insertAdjacentHTML("afterbegin", markup);
-  };
+  }
+
+  renderError(message = this.#errorMessage) {
+    const markup = `
+        <div class="error">
+          <div class="error__animation">
+          <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_gzlupphk.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"    autoplay></lottie-player>
+          </div>
+          <p class="error__text">${this.#errorMessage}</p>
+        </div>
+    `;
+    this.#clear();
+    this.#parentElement.insertAdjacentHTML("afterbegin", markup);
+  }
+
+  renderSucess(message = this.#successMessage) {
+    const markup = `
+        <div class="success">
+          <div class="success__animation">
+          <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_gzlupphk.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"    autoplay></lottie-player>
+          </div>
+          <p class="success__text">${this.#successMessage}</p>
+        </div>
+    `;
+    this.#clear();
+    this.#parentElement.insertAdjacentHTML("afterbegin", markup);
+  }
+
+  addHandlerRender(handler) {
+    ["hashchange", "load"].forEach((ev) =>
+      window.addEventListener(ev, handler)
+    );
+  }
 
   #clear() {
     this.#parentElement.innerHTML = "";
