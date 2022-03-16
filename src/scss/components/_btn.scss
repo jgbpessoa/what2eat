@@ -105,6 +105,10 @@
     &:hover {
       transform: translate(-3px, -3px);
     }
+
+    @include breakpoint(medium) {
+      display: none;
+    }
   }
 
   &--tiny {
@@ -137,6 +141,27 @@
 
     &:hover {
       transform: translateY(-2px);
+    }
+  }
+
+  &--pagination {
+    background-color: $color-primary-light;
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    padding: rem(6) rem(16);
+    text-align: center;
+    line-height: rem(15);
+    font-size: rem(16);
+    border-radius: rem(20);
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+
+    &-prev:hover {
+      transform: translateX(-4px);
+    }
+
+    &-next:hover {
+      transform: translateX(4px);
     }
   }
 }

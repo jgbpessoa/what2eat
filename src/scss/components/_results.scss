@@ -13,7 +13,10 @@
   border: solid 2px $color-primary;
 
   @include breakpoint(medium) {
-    display: block;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 100%;
+    width: 100%;
     opacity: 1;
     background-color: $color-white;
     border-radius: rem(30);
@@ -29,6 +32,7 @@
 
   .message {
     text-align: center;
+    align-self: flex-start;
     padding: rem(10);
 
     &__title {
@@ -42,5 +46,94 @@
     .animation {
       margin: rem(-40) auto 0;
     }
+  }
+
+  &__list {
+    list-style: none;
+    width: 100%;
+  }
+
+  .result {
+    width: 90%;
+    margin: rem(16) auto;
+    font-size: rem(10);
+    background-color: $color-milk;
+    border: 2px solid $color-primary;
+    box-shadow: -3px 4px 0px $color-primary;
+    border-radius: rem(15);
+    transition: all 100ms linear;
+    cursor: pointer;
+
+    &:hover {
+      transform: translate(-3px, 4px);
+      box-shadow: none;
+    }
+
+    &__link {
+      padding: rem(8) rem(16);
+      display: flex;
+      text-decoration: none;
+      align-items: center;
+      gap: rem(12);
+    }
+
+    &__fig {
+      flex: 0 0 rem(60);
+      border-radius: 50%;
+      height: rem(60);
+      overflow: hidden;
+
+      img {
+        height: 100%;
+        width: 100%;
+        display: block;
+        object-fit: cover;
+      }
+    }
+
+    &__data {
+      color: $color-blue;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    &__title {
+      font-size: rem(18);
+      margin-top: rem(4);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-transform: capitalize;
+      font-weight: 600;
+    }
+
+    &__publisher {
+      margin-top: rem(4);
+      font-size: rem(16);
+      font-weight: 300;
+    }
+  }
+
+  &__pagination {
+    margin: 0 auto rem(8);
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
+  }
+
+  .page {
+    letter-spacing: 0;
+    line-height: rem(40);
+    background: $color-primary-light;
+    text-align: center;
+    color: $color-blue;
+    font-size: rem(16);
+    font-weight: 700;
+    font-family: $font-primary;
+    border-radius: 50%;
+    width: rem(40);
+    height: rem(40);
+    grid-column: 2/3;
   }
 }
