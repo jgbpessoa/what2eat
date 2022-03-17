@@ -9,7 +9,11 @@
 
   &__list {
     display: flex;
-    gap: rem(30);
+    gap: rem(40);
+
+    @media screen and (max-width: 320px) {
+      gap: rem(30);
+    }
   }
 
   &__title {

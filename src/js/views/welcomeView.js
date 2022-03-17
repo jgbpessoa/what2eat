@@ -14,7 +14,7 @@ export const startBtn = function () {
     headerSearch.classList.add("show-scale");
     welcome.classList.add("hidden");
     container.classList.add("padding-mobile");
-    results.classList.add("show-scale");
+    results.classList.add("show-scale-grid");
     // recipeContainer.classList.add("show-scale");
     navbar.classList.add("show");
   });

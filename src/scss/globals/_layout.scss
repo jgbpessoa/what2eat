@@ -41,7 +41,7 @@
 .hidden {
   display: none !important;
   @include breakpoint(medium) {
-    // display: block !important;
+    display: block !important;
   }
 }
 
@@ -74,29 +74,57 @@
     transform: scale(1);
   }
 }
+@keyframes show-scale-grid {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: grid;
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 .show {
   display: block !important;
   opacity: 1;
-  animation: show 500ms ease-in-out;
+  animation: show 200ms ease-in-out;
 }
 .show-scale {
   display: block !important;
   opacity: 1;
   transform: scale(1);
-  animation: show-scale 500ms ease-in-out;
+  animation: show-scale 200ms ease-in-out;
+}
+
+.show-scale-grid {
+  display: grid !important;
+  opacity: 1;
+  transform: scale(1);
+  animation: show-scale-grid 200ms ease-in-out;
 }
 
 .padding-mobile {
   padding-bottom: rem(70);
+
+  @include breakpoint(medium) {
+    padding-bottom: 0;
+  }
 }
 
 main {
   overflow: hidden;
-  padding-bottom: rem(6);
+  padding: rem(12) rem(12) rem(5) rem(12);
+  width: 100%;
   @include breakpoint(medium) {
     display: grid;
     grid-template-columns: 5fr 6fr;
+    height: calc(100% - 8.75rem);
     max-height: calc(100% - rem(140));
     overflow: hidden;
     gap: rem(20);

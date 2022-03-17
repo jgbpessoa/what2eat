@@ -8,8 +8,35 @@ class RecipeView extends View {
 
   addHandlerRender(handler) {
     ["hashchange", "load"].forEach((ev) =>
-      window.addEventListener(ev, handler)
+      window.addEventListener(ev, function () {
+        if (!window.location.hash) return;
+
+        if (window.innerWidth < 768) {
+          document
+            .querySelector(".results")
+            .classList.remove("show-scale-grid");
+          document.querySelector(".recipe").classList.add("show");
+          document.querySelector(".title").classList.add("title--mobile");
+          document.querySelector(".welcome").classList.add("hidden");
+          document.querySelector(".header__search").classList.add("show");
+          document.querySelector(".nav").classList.add("show");
+          document.querySelector(".container").classList.add("padding-mobile");
+        }
+
+        handler();
+      })
     );
+  }
+
+  addHandlerBackBtn() {
+    this._parentElement.addEventListener("click", function (e) {
+      const btn = e.target.closest(".btn--back");
+
+      if (!btn) return;
+      console.log("click btn--back");
+      document.querySelector(".recipe").classList.remove("show");
+      document.querySelector(".results").classList.add("show-scale-grid");
+    });
   }
 
   _generateMarkup() {

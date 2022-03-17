@@ -14,6 +14,7 @@ class PaginationView extends View {
       if (!btn) return;
 
       const goToPage = +btn.dataset.goto;
+      document.querySelector(".results").scrollTop = 0;
       handler(goToPage);
     });
   }

@@ -15,6 +15,10 @@ class SearchView {
   addHandlerSearch(handler) {
     this.#parentElement.addEventListener("submit", function (e) {
       e.preventDefault();
+      if (window.innerWidth < 768) {
+        document.querySelector(".results").classList.add("show-scale-grid");
+        document.querySelector(".recipe").classList.remove("show");
+      }
       handler();
     });
   }

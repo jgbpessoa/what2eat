@@ -3,14 +3,15 @@
 
 .results {
   display: none;
+  grid-template-rows: 1fr;
+  grid-template-columns: 100%;
   transition: all 500ms ease-in-out;
   background-color: $color-white;
   border-radius: rem(30);
-  margin: rem(16);
-  margin-bottom: rem(12);
   height: 55vh;
   overflow-y: scroll;
   border: solid 2px $color-primary;
+  max-height: rem(490);
 
   @include breakpoint(medium) {
     display: grid;
@@ -48,6 +49,10 @@
     }
   }
 
+  // &__content {
+  //   height: 100%;
+  // }
+
   &__list {
     list-style: none;
     width: 100%;
@@ -82,6 +87,11 @@
       border-radius: 50%;
       height: rem(60);
       overflow: hidden;
+
+      @media screen and (max-width: 320px) {
+        flex: 0 0 rem(40);
+        height: rem(40);
+      }
 
       img {
         height: 100%;

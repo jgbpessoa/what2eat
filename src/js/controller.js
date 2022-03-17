@@ -35,7 +35,7 @@ const controlSearchResults = async function () {
     await model.loadSearchResults(query);
 
     // Rendering Search Results
-    resultsView.render(model.getSearchResultsPage());
+    resultsView.render(model.getSearchResultsPage(1));
 
     // Rendering Pagination Buttons
     paginationView.render(model.state.search);
@@ -62,6 +62,7 @@ window.addEventListener("resize", appHeight);
 const init = function () {
   appHeight();
   recipeView.addHandlerRender(controlRecipes);
+  recipeView.addHandlerBackBtn();
   welcomeView.startBtn();
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
