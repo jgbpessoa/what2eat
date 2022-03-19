@@ -11,17 +11,16 @@ class RecipeView extends View {
       window.addEventListener(ev, function () {
         if (!window.location.hash) return;
 
-        if (window.innerWidth < 768) {
-          document
-            .querySelector(".results")
-            .classList.remove("show-scale-grid");
-          document.querySelector(".recipe").classList.add("show");
-          document.querySelector(".title").classList.add("title--mobile");
-          document.querySelector(".welcome").classList.add("hidden");
-          document.querySelector(".header__search").classList.add("show");
-          document.querySelector(".nav").classList.add("show");
-          document.querySelector(".container").classList.add("padding-mobile");
-        }
+        document.querySelector(".results").classList.remove("show-scale-grid");
+        document.querySelector(".recipe").classList.add("show");
+        document.querySelector(".title").classList.add("title--mobile");
+        document.querySelector(".welcome").classList.add("hidden");
+        document
+          .querySelector(".header__search")
+          .classList.add("show-scale-flex");
+        document.querySelector(".nav").classList.add("show");
+        document.querySelector(".recipe").classList.remove("out");
+        document.querySelector(".container").classList.add("padding-mobile");
 
         handler();
       })
@@ -34,7 +33,7 @@ class RecipeView extends View {
 
       if (!btn) return;
       console.log("click btn--back");
-      document.querySelector(".recipe").classList.remove("show");
+      document.querySelector(".recipe").classList.add("out");
       document.querySelector(".results").classList.add("show-scale-grid");
     });
   }
@@ -57,10 +56,10 @@ class RecipeView extends View {
               </span>
             </button>
             <h1 class="recipe__title">
-              <span>${this._data.title}</span>
-              <span class="recipe__user-generated">
+              <span class="text">${this._data.title}</span>
+              <!-- <span class="recipe__user-generated">
                 <i class="fa-solid fa-user"></i>
-              </span>
+              </span> -->
             </h1>
           </figure>
 

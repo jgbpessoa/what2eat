@@ -27,7 +27,6 @@
     border: solid 2px $color-primary;
   }
   @include breakpoint(large) {
-    width: 80%;
     max-height: none;
   }
 
@@ -42,6 +41,10 @@
       font-size: rem(40);
       font-weight: 500;
       letter-spacing: rem(-2);
+
+      @include breakpoint(large) {
+        margin-top: rem(80);
+      }
     }
 
     .animation {
@@ -121,6 +124,16 @@
       margin-top: rem(4);
       font-size: rem(16);
       font-weight: 300;
+    }
+
+    @include breakpoint(large) {
+      &__title {
+        font-size: rem(20);
+      }
+
+      &__publisher {
+        font-size: rem(18);
+      }
     }
   }
 

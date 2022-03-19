@@ -7,6 +7,7 @@
   overflow-y: scroll;
   height: 55vh;
   min-width: rem(222);
+  max-height: rem(500);
   border: solid 2px $color-primary;
   // Fix visible scroll outside border-radius in safari
   transform: translateZ(0);
@@ -15,6 +16,7 @@
     margin: 0 auto;
     width: 100%;
     max-width: none;
+    max-height: none;
     height: auto;
   }
 
@@ -30,7 +32,11 @@
     clip-path: content-box;
 
     @include breakpoint(medium) {
-      max-height: rem(200);
+      max-height: rem(250);
+    }
+
+    @include breakpoint(large) {
+      min-height: rem(280);
     }
   }
 
@@ -43,13 +49,32 @@
 
   &__title {
     position: absolute;
+    text-transform: capitalize;
+    text-align: center;
     width: 100%;
-    background: rgb(255, 249, 231, 0.6);
-    padding: rem(8);
+    background: rgb(255, 249, 231, 0.65);
+    padding: rem(12) rem(8);
     bottom: 0;
     left: 0;
     font-size: rem(24);
-    overflow: ellipsis;
+
+    @include breakpoint(medium) {
+      font-size: rem(28);
+    }
+    @include breakpoint(large) {
+      font-size: rem(32);
+    }
+
+    .text {
+      text-transform: uppercase;
+      display: inline-block;
+      vertical-align: middle;
+      margin-bottom: rem(-6);
+
+      @include breakpoint(large) {
+        margin-bottom: rem(-8);
+      }
+    }
   }
 
   &__user-generated {
@@ -61,9 +86,15 @@
     letter-spacing: 0;
     width: rem(28);
     height: rem(28);
-    background: $color-primary-light;
+    background: $color-secondary;
     border-radius: 50%;
     font-size: rem(18);
+
+    @include breakpoint(large) {
+      width: rem(34);
+      height: rem(34);
+      font-size: rem(20);
+    }
   }
 
   &__details {
@@ -71,6 +102,13 @@
     flex-direction: column;
     align-items: center;
     margin: rem(12) auto;
+
+    @include breakpoint(large) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+    }
   }
 
   &__info {
@@ -102,13 +140,24 @@
     font-size: rem(18);
     margin: rem(24) auto;
     max-width: rem(240);
+
+    @include breakpoint(large) {
+      margin: rem(24);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: flex-start;
+      justify-items: center;
+      align-items: center;
+      column-gap: rem(30);
+      max-width: none;
+    }
   }
 
   &__ingredient {
-    margin: rem(14) auto;
+    margin: rem(12) auto;
     display: grid;
     grid-template-columns: 1fr 2fr 7fr 2fr;
-    // justify-items: center;
+    width: 100%;
   }
 
   &__quantity {

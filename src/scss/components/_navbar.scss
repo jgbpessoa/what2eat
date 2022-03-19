@@ -23,13 +23,13 @@
   @include breakpoint(medium) {
     display: block;
     position: absolute;
-    bottom: rem(45);
+    bottom: rem(38);
     left: 50%;
     transform: translate(-50%);
 
     &__list {
       display: flex;
-      gap: rem(80);
+      gap: 15vw;
     }
 
     &__title {
