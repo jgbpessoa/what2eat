@@ -1,5 +1,5 @@
 import View from "./View.js";
-import fracty from "fracty";
+import Fraction from "fraction.js";
 
 class RecipeView extends View {
   _parentElement = document.querySelector(".recipe");
@@ -20,7 +20,8 @@ class RecipeView extends View {
           .classList.add("show-scale-flex");
         document.querySelector(".nav").classList.add("show");
         document.querySelector(".recipe").classList.remove("out");
-        document.querySelector(".container").classList.add("padding-mobile");
+        if (window.innerWidth < 768)
+          document.querySelector(".container").classList.add("padding-mobile");
 
         handler();
       })
@@ -35,6 +36,17 @@ class RecipeView extends View {
       console.log("click btn--back");
       document.querySelector(".recipe").classList.add("out");
       document.querySelector(".results").classList.add("show-scale-grid");
+    });
+  }
+
+  addHandlerUpdateServings(handler) {
+    this._parentElement.addEventListener("click", function (e) {
+      const btn = e.target.closest(".btn--tiny-servings");
+
+      if (!btn) return;
+      const { updateTo } = btn.dataset;
+
+      if (+updateTo > 0) handler(+updateTo);
     });
   }
 
@@ -83,12 +95,16 @@ class RecipeView extends View {
               <span class="recipe__info-text">servings</span>
 
               <div class="recipe__info-buttons">
-                <button class="btn--tiny btn--tiny-servings">
+                <button data-update-to="${
+                  this._data.servings - 1
+                }" class="btn--tiny btn--tiny-servings">
                   <span class="btn--tiny-icon">
                     <i class="fa-solid fa-circle-minus"></i>
                   </span>
                 </button>
-                <button class="btn--tiny btn--tiny-servings">
+                <button data-update-to="${
+                  this._data.servings + 1
+                }" class="btn--tiny btn--tiny-servings">
                   <span class="btn--tiny-icon">
                     <i class="fa-solid fa-circle-plus"></i>
                   </span>
@@ -130,12 +146,14 @@ class RecipeView extends View {
   }
 
   _generateMarkupIngredient(ing) {
+    if (ing.quantity === 0.33) ing.quantity = new Fraction(1 / 3);
+    if (ing.quantity) ing.quantity = new Fraction(ing.quantity);
     return `<li class="recipe__ingredient">
                 <span class="recipe__icon">
                   <i class="fa-solid fa-check"></i>
                 </span>
                 <span class="recipe__quantity">${
-                  (ing.quantity && fracty(ing.quantity)) || " "
+                  (ing.quantity && ing.quantity.toFraction(true)) || " "
                 }</span>
                 <span class="recipe__description">
                   <span class="recipe__unit">${ing.unit}</span>

@@ -13,8 +13,10 @@ class resultsView extends View {
   }
 
   _generateMarkupResult(result) {
-    return `<li class="result">
-            <a class="result__link result__link--active" href="#${result.id}">
+    const id = window.location.hash.slice(1);
+
+    return `<li class="result ${result.id === id ? "result--active" : ""}">
+            <a class="result__link" href="#${result.id}">
               <figure class="result__fig">
                 <img src="${result.image}" alt="${result.title}" />
               </figure>

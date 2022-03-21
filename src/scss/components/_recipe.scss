@@ -5,9 +5,7 @@
   display: none;
   border-radius: rem(30);
   overflow-y: scroll;
-  height: 55vh;
-  min-width: rem(222);
-  max-height: rem(500);
+  height: calc(100% - rem(64));
   border: solid 2px $color-primary;
   // Fix visible scroll outside border-radius in safari
   transform: translateZ(0);
@@ -17,16 +15,14 @@
     width: 100%;
     max-width: none;
     max-height: none;
-    height: auto;
+    height: 100%;
   }
 
   &__fig {
     width: 100%;
     height: 23vh;
-    min-height: rem(150);
+    min-height: rem(180);
     position: relative;
-    border-top-left-radius: rem(30);
-    border-top-right-radius: rem(30);
     overflow: hidden;
     -webkit-clip-path: content-box;
     clip-path: content-box;
@@ -121,7 +117,19 @@
     &-buttons {
       display: inline-flex;
       margin-left: rem(5);
-      gap: rem(10);
+      gap: rem(12);
+
+      @include breakpoint(large) {
+        gap: rem(8);
+      }
+    }
+
+    @include breakpoint(large) {
+      margin-top: 0;
+
+      &:nth-child(2) {
+        margin-top: 0;
+      }
     }
   }
 
@@ -129,25 +137,28 @@
     text-align: center;
     text-decoration: underline;
     font-size: rem(24);
+
+    @include breakpoint(large) {
+      font-size: rem(26);
+    }
   }
 
   &__ingredients,
   &__directions {
-    margin: rem(24) rem(18);
+    margin: rem(24);
   }
 
   &__ingredient-list {
     font-size: rem(18);
     margin: rem(24) auto;
-    max-width: rem(240);
 
     @include breakpoint(large) {
-      margin: rem(24);
+      margin: rem(24) rem(12);
       display: grid;
       grid-template-columns: 1fr 1fr;
       justify-content: flex-start;
       justify-items: center;
-      align-items: center;
+      align-items: flex-start;
       column-gap: rem(30);
       max-width: none;
     }
@@ -168,5 +179,10 @@
     text-align: center;
     font-size: rem(18);
     margin: rem(16) auto;
+
+    @include breakpoint(large) {
+      margin: rem(24) auto;
+      width: 40ch;
+    }
   }
 }

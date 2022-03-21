@@ -49,6 +49,6 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
-    "fracty": "^1.0.9"
+    "fraction.js": "^4.2.0"
   }
 }

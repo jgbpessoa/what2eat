@@ -8,10 +8,9 @@
   transition: all 500ms ease-in-out;
   background-color: $color-white;
   border-radius: rem(30);
-  height: 55vh;
+  height: calc(100% - rem(64));
   overflow-y: scroll;
   border: solid 2px $color-primary;
-  max-height: rem(490);
 
   @include breakpoint(medium) {
     display: grid;
@@ -73,6 +72,12 @@
     cursor: pointer;
 
     &:hover {
+      transform: translate(-3px, 4px);
+      box-shadow: none;
+    }
+
+    &--active {
+      background-color: $color-secondary-light;
       transform: translate(-3px, 4px);
       box-shadow: none;
     }

@@ -3,12 +3,12 @@
 
 .header {
   max-width: rem(1000);
-  margin-top: rem(16);
+  width: 100%;
 
   @include breakpoint(medium) {
     display: flex;
     align-items: center;
-    gap: rem(55);
+    gap: calc(40px + (100vw - 768px) / 2);
     margin-bottom: rem(24);
   }
 
@@ -22,7 +22,10 @@
 
   &__search {
     display: none;
+    width: 100%;
+    padding: 0 rem(16);
     transition: all 500ms ease-in-out;
+    justify-content: center;
 
     &--mobile {
       width: auto;
@@ -36,6 +39,7 @@
       opacity: 1;
       display: flex;
       gap: rem(10);
+      padding: 0;
     }
 
     @include breakpoint(large) {
@@ -78,6 +82,14 @@
     @include breakpoint(medium) {
       transform: none;
     }
+  }
+
+  @include breakpoint(medium) {
+    padding-left: calc((100vw - 768px) / 4);
+  }
+
+  @include breakpoint(large) {
+    padding-left: 0;
   }
 
   &__logo {

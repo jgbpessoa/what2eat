@@ -115,12 +115,17 @@
     color: $color-primary;
     background-color: transparent;
     border: none;
-    font-size: rem(18);
+    font-size: rem(24);
+    padding: 1px;
     cursor: pointer;
     transition: all 150ms ease-in-out;
 
     &:hover {
       transform: translateY(-2px);
+    }
+
+    &-cart {
+      align-self: flex-start;
     }
   }
 

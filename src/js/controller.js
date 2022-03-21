@@ -12,6 +12,9 @@ const controlRecipes = async function () {
 
   recipeView.renderSpinner();
   try {
+    // Update results view to mark selected search result
+    resultsView.update(model.getSearchResultsPage());
+
     // Loading Recipe
     await model.loadRecipe(id);
 
@@ -52,6 +55,15 @@ const controlPagination = function (goToPage) {
   paginationView.render(model.state.search);
 };
 
+const controlServings = function (newServings) {
+  // Update the recipe servings (in state)
+  model.updateServings(newServings);
+
+  // Update the recipe view
+  // recipeView.render(model.state.recipe);
+  recipeView.update(model.state.recipe);
+};
+
 // Fixing mobile browsers 100vh issue
 const appHeight = () => {
   const doc = document.documentElement;
@@ -63,6 +75,7 @@ const init = function () {
   appHeight();
   recipeView.addHandlerRender(controlRecipes);
   recipeView.addHandlerBackBtn();
+  recipeView.addHandlerUpdateServings(controlServings);
   welcomeView.startBtn();
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);

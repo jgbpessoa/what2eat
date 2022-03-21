@@ -2,11 +2,14 @@
 @use "globals" as *;
 
 .welcome {
-  margin-top: rem(36);
   text-align: center;
 
-  @media screen and (max-width: 20em) {
-    margin-top: rem(26);
+  @media screen and (max-width: 48em) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
   }
 
   @include breakpoint(medium) {
