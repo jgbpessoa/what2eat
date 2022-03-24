@@ -5,6 +5,12 @@
   max-width: rem(1000);
   width: 100%;
 
+  @media screen and (min-width: 37.5em) and (max-width: 48em) {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
   @include breakpoint(medium) {
     display: flex;
     align-items: center;
@@ -31,6 +37,11 @@
       width: auto;
       height: auto;
       opacity: 1;
+    }
+
+    @media screen and (min-width: 37.5em) and (max-width: 48em) {
+      padding: 0;
+      width: rem(285);
     }
 
     @include breakpoint(medium) {
@@ -78,6 +89,10 @@
 
   &--mobile {
     transform: translateY(-10px);
+
+    @media screen and (min-width: 37.5em) and (max-width: 48em) {
+      transform: none;
+    }
 
     @include breakpoint(medium) {
       transform: none;

@@ -7,11 +7,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5vh 0 2vh;
+  padding: 3rem 0 1.5rem;
   width: 95%;
   height: 95%;
   min-width: rem(265);
-  min-height: rem(500);
   max-height: rem(950);
   margin: 0 auto;
   background-color: $color-milk;
@@ -19,6 +18,7 @@
   border: solid $color-secondary rem(10);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  // transform-style: flat;
 
   @media screen and (max-width: 20em) {
     padding: rem(24) 0 rem(18);
@@ -28,7 +28,6 @@
     padding: rem(20) rem(30);
     overflow: hidden;
     max-width: none;
-    min-height: rem(800);
     display: grid;
     grid-template-rows: 1fr 6fr;
     grid-template-columns: 1fr;
@@ -112,7 +111,7 @@
   }
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: 1;
   }
 }
 
@@ -139,7 +138,7 @@
 .show-scale-grid {
   display: grid !important;
   opacity: 1;
-  transform: scale(1);
+  transform: 1;
   animation: show-scale-grid 200ms ease-in-out;
 }
 
@@ -160,7 +159,6 @@ main {
     grid-template-columns: 4.5fr 5.5fr;
     max-height: calc(100% - rem(124));
     max-width: none;
-    overflow: hidden;
     gap: rem(20);
   }
   @include breakpoint(large) {
@@ -169,6 +167,6 @@ main {
     gap: rem(40);
     padding-top: rem(12);
     max-height: none;
-    padding-bottom: rem(40);
+    padding-bottom: rem(24);
   }
 }

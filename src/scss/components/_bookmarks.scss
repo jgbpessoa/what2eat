@@ -1,0 +1,69 @@
+@use "globals" as *;
+@use "utilities" as *;
+
+.btn--bookmarks {
+  z-index: 2;
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    .bookmarks,
+    .message {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .bookmarks {
+      height: 30vh;
+    }
+  }
+
+  .bookmarks {
+    position: absolute;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    background-color: $color-milk;
+    left: 50%;
+    bottom: rem(73);
+    border-radius: 30px;
+    border: solid $color-primary 2px;
+    width: calc(100% - rem(24));
+    max-width: rem(576);
+    height: 0;
+    transform: translate(-50%);
+    padding: 2rem;
+    transition: all 200ms ease-in-out;
+
+    @media screen and (max-width: 20em) {
+      bottom: rem(67);
+    }
+
+    @include breakpoint(medium) {
+      bottom: rem(111);
+      left: rem(42);
+      width: calc(45% - rem(47));
+      transform: none;
+    }
+
+    @include breakpoint(large) {
+      top: clamp(107px, calc(107px + ((100vh - 700px) / 8.333)), 143px);
+      left: calc(40% + 32px);
+      max-width: 633.61px;
+      width: calc(497.75px + (100vw - 1024px) / 1.76);
+    }
+
+    .bookmarks__list {
+      .message {
+        font-size: 1.5rem;
+        max-width: 22ch;
+        text-align: center;
+
+        span {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}

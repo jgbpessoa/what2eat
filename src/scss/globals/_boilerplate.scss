@@ -32,8 +32,13 @@ body {
   background: $color-sienna;
   color: $color-blue;
   letter-spacing: rem(-1);
+
   @include breakpoint(medium) {
-    min-height: rem(900);
+    min-height: rem(800);
+  }
+
+  @include breakpoint(large) {
+    min-height: rem(700);
   }
 }
 

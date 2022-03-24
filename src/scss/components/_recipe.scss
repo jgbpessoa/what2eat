@@ -4,9 +4,11 @@
 .recipe {
   display: none;
   border-radius: rem(30);
+
   overflow-y: scroll;
   height: calc(100% - rem(64));
   border: solid 2px $color-primary;
+  background: $color-white;
   // Fix visible scroll outside border-radius in safari
   transform: translateZ(0);
 
@@ -32,7 +34,7 @@
     }
 
     @include breakpoint(large) {
-      min-height: rem(280);
+      min-height: rem(232);
     }
   }
 
