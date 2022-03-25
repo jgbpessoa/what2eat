@@ -29,7 +29,7 @@ class PaginationView extends View {
 
     // First page and there are no other pages
 
-    if (this._data.page === 1 && numPages === 1) return;
+    if (this._data.page === 1 && numPages === 1) return "";
 
     // First page and there are other pages
 
