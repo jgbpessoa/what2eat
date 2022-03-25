@@ -50,6 +50,15 @@ class RecipeView extends View {
     });
   }
 
+  addHandlerAddBookmark(handler) {
+    this._parentElement.addEventListener("click", function (e) {
+      const btn = e.target.closest(".btn--bookmark");
+
+      if (!btn) return;
+      handler();
+    });
+  }
+
   _generateMarkup() {
     return `<figure class="recipe__fig">
             <img
@@ -59,7 +68,9 @@ class RecipeView extends View {
             />
             <button class="btn--bookmark">
               <span class="">
-                <i class="fa-regular fa-bookmark"></i>
+                <i class="fa-${
+                  this._data.bookmarked ? "solid" : "regular"
+                } fa-bookmark"></i>
               </span>
             </button>
             <button class="btn--back">

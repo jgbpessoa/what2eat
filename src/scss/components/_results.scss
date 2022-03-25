@@ -60,86 +60,6 @@
     width: 100%;
   }
 
-  .result {
-    width: 90%;
-    margin: rem(16) auto;
-    font-size: rem(10);
-    background-color: $color-milk;
-    border: 2px solid $color-primary;
-    box-shadow: -3px 4px 0px $color-primary;
-    border-radius: rem(15);
-    transition: all 100ms linear;
-    cursor: pointer;
-
-    &:hover {
-      transform: translate(-3px, 4px);
-      box-shadow: none;
-    }
-
-    &--active {
-      background-color: $color-secondary-light;
-    }
-
-    &__link {
-      padding: rem(8) rem(16);
-      display: flex;
-      text-decoration: none;
-      align-items: center;
-      gap: rem(12);
-    }
-
-    &__fig {
-      flex: 0 0 rem(60);
-      border-radius: 50%;
-      height: rem(60);
-      overflow: hidden;
-
-      @media screen and (max-width: 320px) {
-        flex: 0 0 rem(40);
-        height: rem(40);
-      }
-
-      img {
-        height: 100%;
-        width: 100%;
-        display: block;
-        object-fit: cover;
-      }
-    }
-
-    &__data {
-      color: $color-blue;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    &__title {
-      font-size: rem(18);
-      margin-top: rem(4);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      text-transform: capitalize;
-      font-weight: 600;
-    }
-
-    &__publisher {
-      margin-top: rem(4);
-      font-size: rem(16);
-      font-weight: 300;
-    }
-
-    @include breakpoint(large) {
-      &__title {
-        font-size: rem(20);
-      }
-
-      &__publisher {
-        font-size: rem(18);
-      }
-    }
-  }
-
   &__pagination {
     margin: 0 auto rem(8);
     display: grid;
@@ -161,5 +81,86 @@
     width: rem(40);
     height: rem(40);
     grid-column: 2/3;
+  }
+}
+
+.result {
+  width: 90%;
+  margin: rem(16) auto;
+  font-size: rem(10);
+  background-color: $color-milk;
+  border: 2px solid $color-primary;
+  box-shadow: -3px 4px 0px $color-primary;
+  border-radius: rem(15);
+  transition: all 100ms linear;
+  cursor: pointer;
+
+  &:hover {
+    transform: translate(-3px, 4px);
+    box-shadow: none;
+  }
+
+  &--active {
+    background-color: $color-secondary-light;
+  }
+
+  &__link {
+    padding: rem(8) rem(16);
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    gap: rem(12);
+    height: 100%;
+  }
+
+  &__fig {
+    flex: 0 0 rem(60);
+    border-radius: 50%;
+    height: rem(60);
+    overflow: hidden;
+
+    @media screen and (max-width: 320px) {
+      flex: 0 0 rem(40);
+      height: rem(40);
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  }
+
+  &__data {
+    color: $color-blue;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__title {
+    font-size: rem(18);
+    margin-top: rem(4);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+    font-weight: 600;
+  }
+
+  &__publisher {
+    margin-top: rem(4);
+    font-size: rem(16);
+    font-weight: 300;
+  }
+
+  @include breakpoint(large) {
+    &__title {
+      font-size: rem(20);
+    }
+
+    &__publisher {
+      font-size: rem(18);
+    }
   }
 }

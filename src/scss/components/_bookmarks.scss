@@ -3,7 +3,6 @@
 
 .btn--bookmarks {
   z-index: 2;
-  transition: all 300ms ease-in-out;
 
   &:hover {
     .bookmarks,
@@ -13,7 +12,7 @@
     }
 
     .bookmarks {
-      height: 30vh;
+      height: 250px;
     }
   }
 
@@ -24,7 +23,7 @@
     align-items: center;
     justify-content: center;
     opacity: 0;
-    background-color: $color-milk;
+    background-color: $color-primary-light;
     left: 50%;
     bottom: rem(73);
     border-radius: 30px;
@@ -33,8 +32,8 @@
     max-width: rem(576);
     height: 0;
     transform: translate(-50%);
-    padding: 2rem;
-    transition: all 200ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    transition-delay: 300ms;
 
     @media screen and (max-width: 20em) {
       bottom: rem(67);
@@ -54,9 +53,44 @@
       width: calc(497.75px + (100vw - 1024px) / 1.76);
     }
 
+    .result {
+      margin: 0;
+      width: 90%;
+
+      @media screen and (max-width: 20em) {
+        height: rem(75);
+      }
+
+      @media screen and (min-width: 31.25em) {
+        width: 45%;
+      }
+
+      @include breakpoint(medium) {
+        width: 90%;
+      }
+      @include breakpoint(large) {
+        width: 45%;
+        height: rem(82);
+      }
+    }
+
     .bookmarks__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(16);
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      overflow-y: scroll;
+      height: 100%;
+      padding: rem(16);
+
       .message {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+
+        @include breakpoint(medium) {
+          font-size: 1.5rem;
+        }
         max-width: 22ch;
         text-align: center;
 
