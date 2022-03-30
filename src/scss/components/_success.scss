@@ -1,0 +1,14 @@
+@use "utilities" as *;
+
+.success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: rem(20);
+
+  @include breakpoint(medium) {
+    font-size: rem(30);
+    grid-column: 1/-1;
+  }
+}

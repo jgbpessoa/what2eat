@@ -33,17 +33,18 @@
   }
 
   @include breakpoint(medium) {
-    height: rem(580);
+    height: rem(620);
     padding: rem(30) rem(40);
   }
 
   @include breakpoint(large) {
-    height: rem(480);
+    height: rem(490);
   }
 }
 
 .upload {
   color: $color-blue;
+  height: 100%;
 
   @include breakpoint(medium) {
     margin-top: rem(-30);
