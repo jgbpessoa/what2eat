@@ -80,9 +80,11 @@ class RecipeView extends View {
             </button>
             <h1 class="recipe__title">
               <span class="text">${this._data.title}</span>
-              <!-- <span class="recipe__user-generated">
+              <span class="recipe__user-generated ${
+                this._data.key ? "" : "hidden"
+              }">
                 <i class="fa-solid fa-user"></i>
-              </span> -->
+              </span>
             </h1>
           </figure>
 

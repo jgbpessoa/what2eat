@@ -68,7 +68,7 @@ export default class View {
     const markup = `
         <div class="success">
           <div class="success__animation">
-          <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_gzlupphk.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"    autoplay></lottie-player>
+          <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_rc5d0f61.json"  background="transparent"  speed="1.5"  style="width: 100px; height: 100px;"    autoplay></lottie-player>
           </div>
           <p class="success__text">${this._successMessage}</p>
         </div>

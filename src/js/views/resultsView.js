@@ -22,10 +22,14 @@ class resultsView extends View {
               </figure>
               <div class="result__data">
                 <h4 class="result__title">${result.title}</h4>
+
                 <p class="result__publisher">${result.publisher}</p>
-                <div class="result__user-generated">
-                </div>
               </div>
+              <span class="result__user-generated ${
+                result.key ? "" : "hidden"
+              }">
+                <i class="fa-solid fa-user"></i>
+              </span>
             </a>
           </li>
     `;

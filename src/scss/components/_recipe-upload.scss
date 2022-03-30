@@ -38,7 +38,7 @@
   }
 
   @include breakpoint(large) {
-    height: rem(440);
+    height: rem(480);
   }
 }
 
@@ -64,7 +64,7 @@
     @include breakpoint(large) {
       display: grid;
       grid-template-columns: 1fr 2.5fr;
-      gap: rem(5) 0;
+      gap: rem(8) 0;
       align-items: center;
     }
 
@@ -78,14 +78,14 @@
       font-size: rem(16);
       width: 100%;
       border: 1px solid $color-primary;
-      padding: rem(8) rem(4) rem(4);
+      padding: rem(12) rem(4) rem(9);
       border-radius: rem(8);
       color: $color-blue;
       font-family: $font-secondary;
 
       &:focus {
         outline: none;
-        padding: rem(7) rem(3) rem(3);
+        padding: rem(11) rem(3) rem(8);
         border: 2px solid $color-primary;
         background-color: #f7ddc9;
       }
