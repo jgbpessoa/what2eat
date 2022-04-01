@@ -1,0 +1,63 @@
+@use "globals" as *;
+@use "utilities" as *;
+
+.btn--shopping {
+  z-index: 2;
+
+  .message {
+    opacity: 1;
+    visibility: visible;
+  }
+  // &:hover {
+  //   .shopping,
+  //   .message {
+  //     opacity: 1;
+  //     visibility: visible;
+  //   }
+
+  //   .shopping {
+  //     height: 250px;
+  //   }
+  // }
+
+  .shopping {
+    position: absolute;
+    visibility: visible;
+    // visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    // opacity: 0;
+    background-color: $color-primary-light;
+    left: 50%;
+    bottom: rem(73);
+    border-radius: 30px;
+    border: solid $color-primary 2px;
+    width: calc(100% - rem(24));
+    max-width: rem(576);
+    // height: 0;
+    height: 250px;
+    transform: translate(-50%);
+    transition: all 300ms ease-in-out;
+    transition-delay: 300ms;
+
+    @media screen and (max-width: 20em) {
+      bottom: rem(67);
+    }
+
+    @include breakpoint(medium) {
+      bottom: rem(111);
+      left: rem(42);
+      width: calc(45% - rem(47));
+      transform: none;
+    }
+
+    @include breakpoint(large) {
+      top: clamp(107px, calc(107px + ((100vh - 700px) / 8.333)), 143px);
+      left: calc(40% + 32px);
+      max-width: 633.61px;
+      width: calc(497.75px + (100vw - 1024px) / 1.76);
+    }
+  }
+}

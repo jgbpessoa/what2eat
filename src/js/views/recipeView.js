@@ -3,6 +3,7 @@ import Fraction from "fraction.js";
 
 class RecipeView extends View {
   _parentElement = document.querySelector(".recipe");
+  _ingList = document.querySelector(".recipe__ingredients");
   _errorMessage = "We could not find that recipe. Please try another one!";
   _successMessage = "";
 
@@ -56,6 +57,17 @@ class RecipeView extends View {
 
       if (!btn) return;
       handler();
+    });
+  }
+
+  addHandlerShoppingList(handler) {
+    this._parentElement.addEventListener("click", function (e) {
+      const btn = e.target.closest(".btn--tiny-cart");
+      if (!btn) return;
+      const item = e.path
+        .find((el) => el.classList.contains("recipe__ingredient"))
+        .innerText.replace("\n", " ");
+      handler(item);
     });
   }
 

@@ -81,11 +81,15 @@
                 <span class="nav__title">Add recipe</span>
               </button>
             </li>
-            <li class="nav__item">
+            <li class="nav__item btn--shopping">
               <button class="btn btn--nav">
                 <span><i class="fa-solid fa-shopping-cart"></i></span>
                 <span class="nav__title">List</span>
               </button>
+              <div class="shopping">
+                <button class="btn--close-modal close-list">×</button>
+                <ul class="shopping__list"></ul>
+              </div>
             </li>
           </ul>
         </nav>
@@ -145,7 +149,7 @@
         </div>
         <div class="recipe hiddden"></div>
         <div class="recipe-upload hidden">
-          <button class="btn--close-modal">×</button>
+          <button class="btn--close-modal close-modal">×</button>
           <form class="upload">
             <div class="upload__column">
               <h3 class="upload__heading">Recipe data</h3>
