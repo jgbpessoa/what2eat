@@ -1,19 +1,27 @@
-const btnStart = document.querySelector(".btn--start");
-const headerTitle = document.querySelector(".title");
-const headerSearch = document.querySelector(".header__search");
-const results = document.querySelector(".results");
-const container = document.querySelector(".container");
-const navbar = document.querySelector(".nav");
-const welcome = document.querySelector(".welcome");
+class WelcomeView {
+  _btnStart = document.querySelector(".btn--start");
+  _headerTitle = document.querySelector(".title");
+  _headerSearch = document.querySelector(".header__search");
+  _results = document.querySelector(".results");
+  _container = document.querySelector(".container");
+  _navbar = document.querySelector(".nav");
+  _welcome = document.querySelector(".welcome");
 
-export const startBtn = function () {
-  btnStart.addEventListener("click", function () {
-    console.log("btn clicked");
-    headerTitle.classList.add("title--mobile");
-    headerSearch.classList.add("show-scale-flex");
-    welcome.classList.add("out");
-    container.classList.add("padding-mobile");
-    results.classList.add("show-scale-grid");
-    navbar.classList.add("show");
-  });
-};
+  constructor() {
+    this._start();
+  }
+
+  _mobileStart() {
+    this._headerTitle.classList.add("title--mobile");
+    this._headerSearch.classList.add("show-scale-flex");
+    this._welcome.classList.add("out");
+    this._container.classList.add("padding-mobile");
+    this._results.classList.add("show-scale-grid");
+    this._navbar.classList.add("show");
+  }
+  _start() {
+    this._btnStart.addEventListener("click", this._mobileStart.bind(this));
+  }
+}
+
+export default new WelcomeView();

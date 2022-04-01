@@ -2,7 +2,7 @@ import "babel-polyfill";
 import * as model from "./model.js";
 import { MODAL_CLOSE_SEC } from "./config.js";
 import recipeView from "./views/recipeView.js";
-import * as welcomeView from "./views/welcomeView.js";
+import welcomeView from "./views/welcomeView.js";
 import searchView from "./views/searchView.js";
 import resultsView from "./views/resultsView.js";
 import paginationView from "./views/paginationView.js";
@@ -130,7 +130,6 @@ const init = function () {
   recipeView.addHandlerBackBtn();
   recipeView.addHandlerUpdateServings(controlServings);
   recipeView.addHandlerAddBookmark(controlAddBookmark);
-  welcomeView.startBtn();
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
