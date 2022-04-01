@@ -163,4 +163,16 @@
       font-size: rem(18);
     }
   }
+
+  &__user-generated {
+    color: $color-blue;
+    flex: 0 0 rem(30);
+    height: rem(30);
+    font-size: rem(18);
+    text-align: center;
+    background-color: $color-sienna;
+    line-height: rem(34);
+    border-radius: 50%;
+    letter-spacing: 0;
+  }
 }
