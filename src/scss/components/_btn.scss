@@ -200,6 +200,10 @@
     &:hover {
       transform: scale(1.15);
     }
+
+    @include breakpoint(medium) {
+      left: 146%;
+    }
   }
 
   &--upload {
