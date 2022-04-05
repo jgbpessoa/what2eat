@@ -135,3 +135,28 @@
   visibility: visible !important;
   height: 250px !important;
 }
+
+@keyframes jumping {
+  0% {
+    transform: translateY(0px);
+  }
+  15% {
+    transform: translateY(-8px);
+  }
+
+  25% {
+    transform: translateY(0px);
+  }
+
+  75% {
+    transform: translateY(-4px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.jumping {
+  animation: jumping 700ms ease-in-out;
+}

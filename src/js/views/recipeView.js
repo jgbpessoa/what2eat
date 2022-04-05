@@ -73,7 +73,7 @@ class RecipeView extends View {
             .composedPath()
             .find((el) => el.classList.contains("recipe__ingredient"))
             .innerText.replace("\n", " ");
-      console.log(item);
+      btn.classList.add("jumping");
       handler(item);
     });
   }
