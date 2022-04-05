@@ -64,9 +64,16 @@ class RecipeView extends View {
     this._parentElement.addEventListener("click", function (e) {
       const btn = e.target.closest(".btn--tiny-cart");
       if (!btn) return;
+      // .composedPath() works in Safari and Firefox
       const item = e.path
-        .find((el) => el.classList.contains("recipe__ingredient"))
-        .innerText.replace("\n", " ");
+        ? e.path
+            .find((el) => el.classList.contains("recipe__ingredient"))
+            .innerText.replace("\n", " ")
+        : e
+            .composedPath()
+            .find((el) => el.classList.contains("recipe__ingredient"))
+            .innerText.replace("\n", " ");
+      console.log(item);
       handler(item);
     });
   }
