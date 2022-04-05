@@ -7,7 +7,7 @@ class AddRecipeView extends View {
   _window = document.querySelector(".recipe-upload");
   _overlay = document.querySelector(".overlay");
   _btnOpen = document.querySelector(".nav__btn--upload");
-  _btnClose = document.querySelector(".btn--close-modal");
+  _btnClose = document.querySelector(".close-modal");
 
   constructor() {
     super();

@@ -195,7 +195,7 @@
     border: solid 2px $color-primary;
     border-radius: 50%;
     transition: all 0.25s ease-in-out;
-    z-index: 2;
+    z-index: 3;
 
     &:hover {
       transform: scale(1.15);

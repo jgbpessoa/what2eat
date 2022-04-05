@@ -8,6 +8,7 @@ import resultsView from "./views/resultsView.js";
 import paginationView from "./views/paginationView.js";
 import bookmarksView from "./views/bookmarksView.js";
 import addRecipeView from "./views/addRecipeView.js";
+import shoppingListView from "./views/shoppingListView.js";
 
 const controlRecipes = async function () {
   const id = window.location.hash.slice(1);
@@ -116,6 +117,24 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
+const controlAddShoppingList = function (item) {
+  if (model.state.shoppingList.includes(item)) return;
+  model.addShoppingList(item);
+  shoppingListView.render(model.state.shoppingList);
+};
+
+const controlDeleteShoppingList = function (index) {
+  // Delete from Shopping List Array
+  model.deleteShoppingList(index);
+
+  // Render new Shopping list
+  shoppingListView.render(model.state.shoppingList);
+};
+
+const controlShoppingList = function () {
+  shoppingListView.render(model.state.shoppingList);
+};
+
 // Fixing mobile browsers 100vh issue
 const appHeight = () => {
   const doc = document.documentElement;
@@ -126,10 +145,13 @@ window.addEventListener("resize", appHeight);
 const init = function () {
   appHeight();
   bookmarksView.addHandlerRender(controlBookmarks);
+  shoppingListView.addHandlerRender(controlShoppingList);
+  shoppingListView.addHandlerDelete(controlDeleteShoppingList);
   recipeView.addHandlerRender(controlRecipes);
   recipeView.addHandlerBackBtn();
   recipeView.addHandlerUpdateServings(controlServings);
   recipeView.addHandlerAddBookmark(controlAddBookmark);
+  recipeView.addHandlerShoppingList(controlAddShoppingList);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);

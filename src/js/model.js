@@ -10,6 +10,7 @@ export const state = {
     resultsPerPage: RES_PER_PAGE,
   },
   bookmarks: [],
+  shoppingList: [],
 };
 
 const createRecipeObject = function (data) {
@@ -140,10 +141,32 @@ export const uploadRecipe = async function (newRecipe) {
   }
 };
 
+const persistShoppingList = function () {
+  localStorage.setItem("shoppingList", JSON.stringify(state.shoppingList));
+};
+
+export const addShoppingList = function (item) {
+  // Add ingredient to shopping list
+  state.shoppingList.push(item);
+
+  // Update shopping list to local storage
+  persistShoppingList();
+};
+
+export const deleteShoppingList = function (index) {
+  // Add ingredient to shopping list
+  state.shoppingList.splice(index, 1);
+
+  // Update shopping list to local storage
+  persistShoppingList();
+};
+
 const init = function () {
   const storage = localStorage.getItem("bookmarks");
+  const items = localStorage.getItem("shoppingList");
 
   if (storage) state.bookmarks = JSON.parse(storage);
+  if (items) state.shoppingList = JSON.parse(items);
 };
 
 init();
